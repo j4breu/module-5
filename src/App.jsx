@@ -1,5 +1,11 @@
+import LoginForm from "./components/LoginForm";
+
 const App = () => {
-  return <div className="text-5xl">App</div>;
+  return (
+    <>
+      <LoginForm />
+    </>
+  );
 };
 
 export default App;

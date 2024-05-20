@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const LoginForm = ({ addJobSubmit }) => {
+const LoginForm = () => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
   const [location, setLocation] = useState("");
@@ -14,21 +15,17 @@ const LoginForm = ({ addJobSubmit }) => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    const newJob = {
-      title,
-      type,
-      location,
-      description,
-      salary,
-      company: {
-        name: companyName,
-        description: companyDescription,
-        contactEmail,
-        contactPhone,
-      },
-    };
+    setTitle("");
+    setType("Full-Time");
+    setLocation("");
+    setDescription("");
+    setSalary("Under $50K");
+    setCompanyName("");
+    setCompanyDescription("");
+    setContactEmail("");
+    setContactPhone("");
 
-    addJobSubmit(newJob);
+    toast.success("Form Submit Successfully");
   };
 
   return (

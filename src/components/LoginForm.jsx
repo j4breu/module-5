@@ -49,8 +49,11 @@ const LoginForm = () => {
                 id="password"
                 name="password"
                 className="border rounded w-full py-2 px-3"
+                required
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                title="Minimum eight characters, at least one letter and one number."
               />
             </div>
 

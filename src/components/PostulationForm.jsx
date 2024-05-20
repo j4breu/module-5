@@ -12,7 +12,12 @@ const PostulationForm = () => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    document.getElementById("postulation").reset();
+    setName("");
+    setContactEmail("");
+    setContactPhone("");
+    setHeadline("");
+    setBio("");
+    setCV("");
 
     toast.success("Form Submit Successfully");
   };
@@ -37,8 +42,8 @@ const PostulationForm = () => {
                 className="border rounded w-full py-2 px-3 mb-2"
                 required
                 value={name}
-                pattern="/^[a-z ,.'-]+$/i"
-                title="Name must contain only letters, spaces, apostrophes, commas, and periods."
+                pattern="/(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/"
+                title="The name can only contain letters, spaces and must be between 2 and 20 characters long"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
